@@ -4,6 +4,9 @@ $ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ
 $blue1 : #42b9d0;
 $blue2 : #339fd1;
 $gray_blue : #eaf2f4;
+$sideContents_bg: #f3f9fb;
+$sideBottomline: #e5e5e5;
+$gray: #626262;
 
 html {
     font-size: 62.5%;
@@ -18,7 +21,7 @@ p {
     @include fontsize(16);
 }
 
-h1 {
+h1 h2 h3{
     margin: 0;
     padding: 0;
 }
@@ -83,7 +86,7 @@ header{
                 margin: 5px 0 0 0;
                 padding: 0;
                 a{
-                    color: #626262;
+                    color: $gray;
                     text-decoration: none;
                     font-weight: bold;
                     @include fontsize(14);
@@ -187,7 +190,7 @@ header{
     // min-width: 551px
 
     .columns{
-        color: #626262;
+        color: $gray;
         .service_title{
             @include fontsize(18);
             font-weight: bold;
@@ -411,7 +414,7 @@ footer{
     }
     // min-width: 551px
 
-    #main{
+    #main {
         float: left;
         line-height: 24px;
         h2{
@@ -421,8 +424,8 @@ footer{
             font-weight: bold;
             padding-bottom: 15px;
         }
-        .news_li{
-            li{
+        .news_li {
+            li {
                 list-style: none;
                 @include fontsize(15);
                 span{
@@ -434,6 +437,16 @@ footer{
             }
         }
         // .news_li
+        th {
+            padding: 20px;
+        }
+        th td {
+            padding: 0 20px;
+            color: $gray;
+            font-size: 1.4rem;
+            text-align: left;
+        }
+        // th td
         @media (min-width: 551px) {
             padding: 0 20px;
             h2{
@@ -450,5 +463,48 @@ footer{
         // min-width: 551px
     }
     // #main
+
+    #sidebar{
+        padding-bottom: 20px;
+        display: block;
+
+        @media (max-width: 550px) {
+            .pc_sidemenu{
+                display: none;
+            }
+        }
+        
+        @media (min-width: 551px) {
+            h3 {
+                color: $blue1;
+                font-size: 1.4rem;
+                letter-spacing: 0.2rem;
+                font-weight: bold;
+                background-color: $sideContents_bg;
+                padding: 15px;
+                margin-bottom: 0;
+            }
+            ul {
+                li {
+                    list-style: none;
+                    display: block;
+                    border-bottom: 1px solid $sideBottomline;
+                    background-repeat: no-repeat;
+                    background-position: 8px center;
+                    margin-bottom: 0;
+                    padding: 10px 10px 10px 20px;
+                    background-image: url(../images/news/side_arrow.png);
+                    background-size: 4px 8px;
+                    a {
+                        color: $blue2;
+                        text-decoration: none;
+                    }
+                }
+            }
+            // ul
+        }
+        // @media (min-width: 551px)
+    }
+    // #sidebar
 }
 // #contents
