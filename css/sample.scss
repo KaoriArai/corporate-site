@@ -26,7 +26,8 @@ h1 h2 h3{
     padding: 0;
 }
 
-/**************************************/
+/* HEADER 
+---------------------------------------------*/
 header{
     background: $gray_blue;
     #header_in{
@@ -153,7 +154,8 @@ header{
 }
 // header
 
-//-----------------------------------
+/* COVER
+---------------------------------------------*/
 #cover_area{
     text-align: center;
     padding:80px 0;
@@ -181,6 +183,41 @@ header{
 }
 // #cover_area
 
+#sub_cover {
+    padding: 40px 0;
+
+    //retina_bg
+    background-image: url("../images/news/sub_cover.jpg");
+    background-size: cover;
+
+    @media screen and (-webkit-min-device-pixel-ratio:2),
+                      (min-resolution: 2dppx){
+        background-image: url("../images/news/sub_cover@2x.jpg");
+    }
+    h2{
+        text-align: center;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin: 0;
+        letter-spacing: 0.2rem;
+    }
+    @media (min-width: 551px) {
+        padding: 80px 0;
+        img{
+            margin-top: 180px;
+            margin-left: 70px;
+        }
+        h2{
+            font-size: 3.2rem;
+        }
+    }
+    // min-width: 551px
+}
+// #sub_cover
+
+/* EACH CONTENTS
+---------------------------------------------*/
 #service_area{
     padding-top:20px;
 
@@ -269,7 +306,120 @@ header{
 }
 // #news_area
 
-//-----------------------------------
+#contents {
+    padding-top: 20px;
+
+    @media (min-width: 551px) {
+        padding: 35px 0 70px 0;
+    }
+    // min-width: 551px
+
+    #main {
+        float: left;
+        h2{
+            color: $blue1;
+            border-bottom: 3px solid $blue1;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding-bottom: 15px;
+        }
+        .company_title{
+            margin-bottom: 0;
+        }
+        .news_li {
+            font-size: 1.5rem;
+            li {
+                list-style: none;
+                @include fontsize(15);
+                span{
+                    color: $blue1;
+                    font-weight: bold;
+                    display: block;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+        // .news_li
+        th, td {
+            padding: 20px 0;
+            color: $gray;
+            font-size: 1.4rem;
+            text-align: left;
+        }
+        th {
+            padding-right: 20px;
+        }
+        // th
+        
+        @media (min-width: 551px) {
+            padding-right: 20px;
+            h2{
+                font-size: 2rem;
+                padding-bottom: 20px;
+            }
+            .news_li{
+                li{
+                    list-style: none;
+                    padding-bottom: 5px;
+                    span {
+                        display: inline-block;
+                        margin-bottom: 0;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+        // min-width: 551px
+    }
+    // #main
+
+    #sidebar{
+        padding-bottom: 20px;
+        display: block;
+
+        @media (max-width: 550px) {
+            .pc_sidemenu{
+                display: none;
+            }
+        }
+        
+        @media (min-width: 551px) {
+            h3 {
+                color: $blue1;
+                font-size: 1.4rem;
+                letter-spacing: 0.2rem;
+                font-weight: bold;
+                background-color: $sideContents_bg;
+                padding: 15px;
+                margin-bottom: 0;
+            }
+            ul {
+                li {
+                    list-style: none;
+                    display: block;
+                    border-bottom: 1px solid $sideBottomline;
+                    background-repeat: no-repeat;
+                    background-position: 8px center;
+                    margin-bottom: 0;
+                    padding: 10px 10px 10px 20px;
+                    background-image: url(../images/news/side_arrow.png);
+                    background-size: 4px 8px;
+                    a {
+                        color: $blue2;
+                        text-decoration: none;
+                    }
+                }
+            }
+            // ul
+        }
+        // @media (min-width: 551px)
+    }
+    // #sidebar
+}
+// #contents
+
+/* FOOTER 
+---------------------------------------------*/
 footer{
     background-color:$blue1;
     color: #fff;
@@ -362,159 +512,3 @@ footer{
     // min-width: 551p
 }
 // footer
-
-/**************************************/
-#sub_cover {
-    padding: 40px 0;
-
-    //retina_bg
-    background-image: url("../images/news/sub_cover.jpg");
-    background-size: cover;
-
-    @media screen and (-webkit-min-device-pixel-ratio:2),
-                      (min-resolution: 2dppx){
-        background-image: url("../images/news/sub_cover@2x.jpg");
-    }
-    h2{
-        text-align: center;
-        color: white;
-        font-size: 1.6rem;
-        font-weight: bold;
-        margin: 0;
-        letter-spacing: 0.2rem;
-    }
-    @media (min-width: 551px) {
-        padding: 80px 0;
-        img{
-            margin-top: 180px;
-            margin-left: 70px;
-        }
-        h2{
-            font-size: 3.2rem;
-        }
-    }
-    // min-width: 551px
-}
-// #sub_cover
-
-#contents {
-    padding-top: 20px;
-    
-    .container{
-        padding: 0 20px 0 20px;
-    }
-
-    @media (min-width: 551px) {
-        // #contens    
-        padding: 35px 0 70px 0;
-        .container{
-            display: block;
-            width: 80%;
-        }
-    }
-    // min-width: 551px
-
-    #main {
-        float: left;
-        // line-height: 24px;
-        h2{
-            color: $blue1;
-            border-bottom: 3px solid $blue1;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding-bottom: 15px;
-        }
-        .company_title{
-            margin-bottom: 0;
-        }
-        .news_li {
-            font-size: 1.5rem;
-            li {
-                list-style: none;
-                @include fontsize(15);
-                span{
-                    color: $blue1;
-                    font-weight: bold;
-                    display: block;
-                    margin-bottom: 3px;
-                }
-            }
-        }
-        // .news_li
-        th, td {
-            padding: 20px 0;
-            color: $gray;
-            font-size: 1.4rem;
-            text-align: left;
-        }
-        th {
-            padding-right: 20px;
-        }
-        // th
-        
-        @media (min-width: 551px) {
-            padding: 0 20px;
-            h2{
-                font-size: 2rem;
-                padding-bottom: 20px;
-            }
-            .news_li{
-                li{
-                    list-style: none;
-                    padding-bottom: 5px;
-                    span {
-                        display: inline-block;
-                        margin-bottom: 0;
-                        padding-right: 10px;
-                    }
-                }
-            }
-        }
-        // min-width: 551px
-    }
-    // #main
-
-    #sidebar{
-        padding-bottom: 20px;
-        display: block;
-
-        @media (max-width: 550px) {
-            .pc_sidemenu{
-                display: none;
-            }
-        }
-        
-        @media (min-width: 551px) {
-            h3 {
-                color: $blue1;
-                font-size: 1.4rem;
-                letter-spacing: 0.2rem;
-                font-weight: bold;
-                background-color: $sideContents_bg;
-                padding: 15px;
-                margin-bottom: 0;
-            }
-            ul {
-                li {
-                    list-style: none;
-                    display: block;
-                    border-bottom: 1px solid $sideBottomline;
-                    background-repeat: no-repeat;
-                    background-position: 8px center;
-                    margin-bottom: 0;
-                    padding: 10px 10px 10px 20px;
-                    background-image: url(../images/news/side_arrow.png);
-                    background-size: 4px 8px;
-                    a {
-                        color: $blue2;
-                        text-decoration: none;
-                    }
-                }
-            }
-            // ul
-        }
-        // @media (min-width: 551px)
-    }
-    // #sidebar
-}
-// #contents
