@@ -416,7 +416,7 @@ footer{
 
     #main {
         float: left;
-        line-height: 24px;
+        // line-height: 24px;
         h2{
             color: $blue1;
             border-bottom: 3px solid $blue1;
@@ -424,7 +424,11 @@ footer{
             font-weight: bold;
             padding-bottom: 15px;
         }
+        .company_title{
+            margin-bottom: 0;
+        }
         .news_li {
+            font-size: 1.5rem;
             li {
                 list-style: none;
                 @include fontsize(15);
@@ -437,26 +441,32 @@ footer{
             }
         }
         // .news_li
-        th {
-            padding: 20px;
-        }
-        th td {
-            padding: 0 20px;
+        th, td {
+            padding: 20px 0;
             color: $gray;
             font-size: 1.4rem;
             text-align: left;
         }
-        // th td
+        th {
+            padding-right: 20px;
+        }
+        // th
+        
         @media (min-width: 551px) {
             padding: 0 20px;
             h2{
                 font-size: 2rem;
                 padding-bottom: 20px;
-            }    
+            }
             .news_li{
                 li{
                     list-style: none;
                     padding-bottom: 5px;
+                    span {
+                        display: inline-block;
+                        margin-bottom: 0;
+                        padding-right: 10px;
+                    }
                 }
             }
         }
